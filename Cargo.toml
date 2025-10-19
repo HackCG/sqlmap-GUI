@@ -1,0 +1,51 @@
+[package]
+name = "sqlmap_gui"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "SQLmap GUI client built with Dioxus"
+license = "MIT"
+
+[package.metadata]
+# 包含sqlmap文件作为资源
+include = [
+    "src/sqlmap/sqlmap.py",
+    "src/sqlmap/sqlmap.conf",
+    "src/sqlmap/sqlmapapi.py",
+    "src/sqlmap/lib/**/*",
+    "src/sqlmap/data/**/*",
+    "src/sqlmap/extra/**/*",
+    "src/sqlmap/tamper/**/*",
+    "src/sqlmap/thirdparty/**/*",
+]
+
+[dependencies]
+# Dioxus UI框架
+dioxus = { version = "0.4.3", features = ["macro", "hooks"] }
+dioxus-desktop = "0.4.3"
+dioxus-router = "0.4.0"
+serde = { version = "1.0.164", features = ["derive"] }
+serde_json = "1.0.97"
+
+futures = "0.3.28"
+# 用于异步操作
+tokio = { version = "1.32.0", features = ["rt", "time"] }
+# 用于更好的主题和动画效果
+dioxus-std = "0.4.0"
+# 用于执行外部命令
+command-executor = "0.1.1"
+windows-sys = { version = "0.52.0", features = ["Win32_System_Threading", "Win32_Foundation", "Win32_Graphics_Dwm"] }
+# Web API绑定
+web-sys = { version = "0.3.64", features = ["HtmlElement"] }
+
+[build-dependencies]
+# Windows图标资源设置
+winres = "0.1.12"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+incremental = false
+strip = true

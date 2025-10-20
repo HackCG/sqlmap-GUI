@@ -22,6 +22,16 @@ SQLmap GUI is a modern graphical interface tool that wraps the powerful open-sou
 - **Built-in SQLmap**: Integrated SQLmap tool, no additional installation required
 - **Tamper Script Selection**: Easy selection and management of SQLmap bypass scripts
 
+## 使用界面 / GUI
+
+### 主界面 / Main Interface
+
+![主界面](1.png)
+
+### 配置界面 / Configuration Interface
+
+![配置界面](2.png)
+
 ## 技术栈 / Technology Stack
 
 - **开发语言**: Rust
